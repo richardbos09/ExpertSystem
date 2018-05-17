@@ -22,233 +22,139 @@ namespace ExpertSystem
             RuleInferenceEngine rie = new RuleInferenceEngine();
 
             Rule rule = new Rule("1");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));        // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));     // +4
-
-            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));                  // +3
-            rule.AddAntecedent(new LessClause("What is your competencies?", "5"));              // +4
-            rule.AddAntecedent(new LessClause("What is your capacities?", "4"));                // +5
-            rule.AddAntecedent(new LessClause("What is your intrinsic motivation?", "4"));      // +5
-            rule.AddAntecedent(new LessClause("What is your extrinsic motivation?", "5"));      // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "yes"));                  // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "yes"));  // +1
-
-            rule.AddAntecedent(new GreaterClause("Number of restrictions?", "2"));              // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "no"));      // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "yes")); // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "yes"));  // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "yes"));    // +4
-
-            rule.setConsequent(new IsClause("advice", "negative"));
+            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new GreaterClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "positive"));
             rie.AddRule(rule);
 
             rule = new Rule("2");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));        // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));     // +4
-
-            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));                  // +3
-            rule.AddAntecedent(new LessClause("What is your competencies?", "5"));              // +4
-            rule.AddAntecedent(new LessClause("What is your capacities?", "4"));                // +5
-            rule.AddAntecedent(new LessClause("What is your intrinsic motivation?", "4"));      // +5
-            rule.AddAntecedent(new LessClause("What is your extrinsic motivation?", "5"));      // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "yes"));                  // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "no"));   // +1
-
-            rule.AddAntecedent(new GreaterClause("Number of restrictions?", "2"));              // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "no"));      // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "yes")); // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "yes"));  // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "yes"));    // +4
-
-            rule.setConsequent(new IsClause("advice", "negative"));
+            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "positive"));
             rie.AddRule(rule);
 
             rule = new Rule("3");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));        // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));     // +4
-
-            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));                  // +3
-            rule.AddAntecedent(new LessClause("What is your competencies?", "5"));              // +4
-            rule.AddAntecedent(new LessClause("What is your capacities?", "4"));                // +5
-            rule.AddAntecedent(new LessClause("What is your intrinsic motivation?", "4"));      // +5
-            rule.AddAntecedent(new LessClause("What is your extrinsic motivation?", "5"));      // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "no"));                   // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "no"));   // +1
-
-            rule.AddAntecedent(new GreaterClause("Number of restrictions?", "2"));              // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "no"));      // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "yes")); // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "yes"));  // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "yes"));    // +4
-
-            rule.setConsequent(new IsClause("advice", "negative"));
+            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));
+            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new GreaterClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "positive"));
             rie.AddRule(rule);
 
             rule = new Rule("4");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));        // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));     // +4
-
-            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));                  // +3
-            rule.AddAntecedent(new LessClause("What is your competencies?", "5"));              // +4
-            rule.AddAntecedent(new LessClause("What is your capacities?", "4"));                // +5
-            rule.AddAntecedent(new LessClause("What is your intrinsic motivation?", "4"));      // +5
-            rule.AddAntecedent(new LessClause("What is your extrinsic motivation?", "5"));      // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "no"));                   // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "no"));   // +1
-
-            rule.AddAntecedent(new GreaterClause("Number of restrictions?", "2"));              // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "no"));      // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "no"));  // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "no"));   // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "yes"));    // +4
-
-            rule.setConsequent(new IsClause("advice", "negative"));
+            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new GreaterClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "positive"));
             rie.AddRule(rule);
 
             rule = new Rule("5");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));        // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));    // +4
-
-            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));                  // +3
-            rule.AddAntecedent(new LessClause("What is your competencies?", "5"));              // +4
-            rule.AddAntecedent(new LessClause("What is your capacities?", "4"));                // +5
-            rule.AddAntecedent(new LessClause("What is your intrinsic motivation?", "4"));      // +5
-            rule.AddAntecedent(new LessClause("What is your extrinsic motivation?", "5"));      // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "no"));                   // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "no"));   // +1
-
-            rule.AddAntecedent(new GreaterClause("Number of restrictions?", "2"));              // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "no"));      // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "yes")); // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "yes"));  // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "no"));     // +4
-
-            rule.setConsequent(new IsClause("advice", "doubt"));
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new GreaterClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "doubt"));
             rie.AddRule(rule);
 
             rule = new Rule("6");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));         // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));     // +4
-
-            rule.AddAntecedent(new LessClause("Number of refusals?", "2"));                     // +3
-            rule.AddAntecedent(new GreaterClause("What is your competencies?", "4"));           // +4
-            rule.AddAntecedent(new GreaterClause("What is your capacities?", "5"));             // +5
-            rule.AddAntecedent(new GreaterClause("What is your intrinsic motivation?", "5"));   // +5
-            rule.AddAntecedent(new GreaterClause("What is your extrinsic motivation?", "4"));   // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "yes"));                  // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "yes"));  // +1
-
-            rule.AddAntecedent(new LessClause("Number of restrictions?", "3"));                 // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "yes"));     // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "no"));  // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "no"));   // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "yes"));    // +4
-
-            rule.setConsequent(new IsClause("advice", "doubt"));
+            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "doubt"));
             rie.AddRule(rule);
 
             rule = new Rule("7");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));         // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));    // +4
-
-            rule.AddAntecedent(new LessClause("Number of refusals?", "2"));                     // +3
-            rule.AddAntecedent(new GreaterClause("What is your competencies?", "4"));           // +4
-            rule.AddAntecedent(new GreaterClause("What is your capacities?", "5"));             // +5
-            rule.AddAntecedent(new GreaterClause("What is your intrinsic motivation?", "5"));   // +5
-            rule.AddAntecedent(new GreaterClause("What is your extrinsic motivation?", "4"));   // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "no"));                   // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "yes"));  // +1
-
-            rule.AddAntecedent(new LessClause("Number of restrictions?", "3"));                 // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "yes"));     // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "no"));  // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "yes"));  // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "no"));     // +4
-
-            rule.setConsequent(new IsClause("advice", "positive"));
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));
+            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "negative"));
             rie.AddRule(rule);
 
             rule = new Rule("8");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));         // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));    // +4
-
-            rule.AddAntecedent(new LessClause("Number of refusals?", "1"));                     // +3
-            rule.AddAntecedent(new GreaterClause("What is your competencies?", "4"));           // +4
-            rule.AddAntecedent(new GreaterClause("What is your capacities?", "5"));             // +5
-            rule.AddAntecedent(new GreaterClause("What is your intrinsic motivation?", "5"));   // +5
-            rule.AddAntecedent(new GreaterClause("What is your extrinsic motivation?", "4"));   // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "yes"));                  // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "yes"));  // +1
-
-            rule.AddAntecedent(new LessClause("Number of restrictions?", "3"));                 // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "yes"));     // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "no"));  // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "no"));   // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "no"));     // +4
-
-            rule.setConsequent(new IsClause("advice", "positive"));
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "negative"));
             rie.AddRule(rule);
 
             rule = new Rule("9");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));         // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));    // +4
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new GreaterClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "negative"));
+            rie.AddRule(rule);
 
-            rule.AddAntecedent(new LessClause("Number of refusals?", "1"));                     // +3
-            rule.AddAntecedent(new GreaterClause("What is your competencies?", "4"));           // +4
-            rule.AddAntecedent(new GreaterClause("What is your capacities?", "5"));             // +5
-            rule.AddAntecedent(new GreaterClause("What is your intrinsic motivation?", "5"));   // +5
-            rule.AddAntecedent(new GreaterClause("What is your extrinsic motivation?", "4"));   // +4
-
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "no"));                   // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "yes"));  // +1
-
-            rule.AddAntecedent(new LessClause("Number of restrictions?", "3"));                 // +1
-
-            rule.AddAntecedent(new IsClause("Have you received any study choice?", "yes"));     // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "no"));  // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "no"));   // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "no"));     // +4
-
-            rule.setConsequent(new IsClause("advice", "positive"));
+            rule = new Rule("9");
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "negative"));
             rie.AddRule(rule);
 
             rule = new Rule("10");
-            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));         // +5
-            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));    // +4
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "negative"));
+            rie.AddRule(rule);
 
-            rule.AddAntecedent(new LessClause("Number of refusals?", "1"));                     // +3
-            rule.AddAntecedent(new GreaterClause("What is your competencies?", "4"));           // +4
-            rule.AddAntecedent(new GreaterClause("What is your capacities?", "5"));             // +5
-            rule.AddAntecedent(new GreaterClause("What is your intrinsic motivation?", "5"));   // +5
-            rule.AddAntecedent(new GreaterClause("What is your extrinsic motivation?", "4"));   // +4
+            rule = new Rule("11");
+            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));
+            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "positive"));
+            rie.AddRule(rule);
 
-            rule.AddAntecedent(new IsClause("Are you MBO deficient?", "no"));                   // +2
-            rule.AddAntecedent(new IsClause("Have you received any personal advice?", "no"));   // +1
+            rule = new Rule("12");
+            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "doubt"));
+            rie.AddRule(rule);
 
-            rule.AddAntecedent(new LessClause("Number of restrictions?", "3"));                 // +1
+            rule = new Rule("13");
+            rule.AddAntecedent(new IsClause("What was your prior education?", "true"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "doubt"));
+            rie.AddRule(rule);
 
-            rule.AddAntecedent(new IsClause("Have you received  any study choice?", "yes"));    // +5
-            rule.AddAntecedent(new IsClause("Have you received a extra conversation?", "no"));  // +2
-            rule.AddAntecedent(new IsClause("Do you need extra training on English?", "no"));   // +3
-            rule.AddAntecedent(new IsClause("Do you need extra training on Dutch?", "no"));     // +4
+            rule = new Rule("14");
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new LEClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "doubt"));
+            rie.AddRule(rule);
 
-            rule.setConsequent(new IsClause("advice", "positive"));
+            rule = new Rule("15");
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "yes"));
+            rule.AddAntecedent(new GreaterClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new GreaterClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "doubt"));
+            rie.AddRule(rule);
+
+            rule = new Rule("16");
+            rule.AddAntecedent(new IsClause("What was your prior education?", "false"));
+            rule.AddAntecedent(new IsClause("Where you present during the intake?", "no"));
+            rule.AddAntecedent(new LEClause("Number of refusals?", "1"));
+            rule.AddAntecedent(new GreaterClause("What is your average score?", "16"));
+            rule.setConsequent(new IsClause("Advice", "negative"));
             rie.AddRule(rule);
 
             return rie;

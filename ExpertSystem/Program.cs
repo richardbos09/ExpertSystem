@@ -22,7 +22,7 @@ namespace ExpertSystem
 
             while (conclusion == null)
             {
-                conclusion = rie.Infer("advice", unproved_conditions);
+                conclusion = rie.Infer("Advice", unproved_conditions);
 
                 if (conclusion == null)
                 {
@@ -55,9 +55,9 @@ namespace ExpertSystem
                 }
             }
 
-            Debug.WriteLine("Advies: " + conclusion);
-            Debug.WriteLine("Memory: ");
-            Debug.WriteLine("{0}", rie.Facts);
+            Console.WriteLine("");
+            Console.WriteLine("Conclusion: " + conclusion);
+            Console.ReadKey();
         }
     }
 }
